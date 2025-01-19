@@ -1,0 +1,77 @@
+---
+
+---
+
+<header>
+    <img class="img" src="/images/image.jpg" alt="" />
+    <nav class="navbar">
+        <ul class="navbar-ul">
+            <li class="navbar-ul-li">
+                <a class="navbar-ul-a" href="">Inicio</a>
+            </li>
+            <li class="navbar-ul-li">
+                <a class="navbar-ul-a" href="">Sobre mi</a>
+            </li>
+            <li class="navbar-ul-li">
+                <a class="navbar-ul-a" href="">Proyectos</a>
+            </li>
+            <li class="navbar-ul-li">
+                <a class="navbar-ul-a navbar-ul-a-contact" href="">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    header {
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .img {
+        margin-left: 25px;
+        width: 70px;
+        height: 40px;
+    }
+    .navbar {
+        width: 30%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 25px;
+    }
+    .navbar-ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        padding: 0 10px;
+        justify-content: space-between;
+        gap: 25px;
+        list-style: none;
+    }
+    .navbar-ul-li {
+        height: 100%;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar-ul-a {
+        color: aliceblue;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        width: 95%;
+    }
+    .navbar-ul-a-contact {
+        border: 2px solid white;
+        border-radius: 15px;
+    }
+</style>

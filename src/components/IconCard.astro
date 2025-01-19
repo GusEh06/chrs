@@ -1,0 +1,37 @@
+---
+import "../styles/global.css";
+// Definimos la interfaz para estructurar los props
+interface Props {
+    title: string;
+    icon: string;
+}
+
+// Destructuramos los props recibidos
+const { title, icon } = Astro.props as Props;
+---
+
+<div class="icon-card">
+    <img src={icon} alt={title} class="icon" />
+    <p class="title">{title}</p>
+</div>
+
+<style>
+    .icon-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    .icon {
+        width: 75px; /* Ajusta el tamaño del ícono */
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .title {
+        font-size: 1.15rem;
+        font-weight: 200;
+    }
+</style>
