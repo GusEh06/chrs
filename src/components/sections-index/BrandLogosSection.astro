@@ -1,0 +1,75 @@
+<section class="brand-logos">
+    <div class="logos-container">
+        <img src="/images/image.jpg" alt="Aujer" />
+        <img src="/images/image.jpg" alt="Geometria" />
+        <img src="/images/image.jpg" alt="Freeman" />
+        <img src="/images/image.jpg" alt="Ciplex" />
+        <img src="/images/image.jpg" alt="Avante" />
+        <img src="/images/image.jpg" alt="Dan Art" />
+        <img src="/images/image.jpg" alt="Emotion" />
+        <img src="/images/image.jpg" alt="Bit Stream" />
+    </div>
+
+    <style>
+        .brand-logos {
+            background-color: #000; /* Fondo negro */
+            /* padding: 3rem 1rem; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logos-container {
+            height: 70%;
+            display: grid;
+            grid-template-columns: repeat(
+                4,
+                1fr
+            ); /* Cuatro columnas en desktop */
+            column-gap: 6rem;
+            row-gap: 3rem;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0;
+        }
+
+        .logos-container img {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Logos blancos sobre fondo oscuro */
+            transition: transform 0.3s ease;
+        }
+
+        .logos-container img:hover {
+            transform: scale(1.1); /* Efecto hover */
+        }
+
+        /* Estilo para Tablets */
+        @media (max-width: 1024px) {
+            .logos-container {
+                grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+                grid-template-rows: repeat(4, auto); /* Cuatro filas */
+                gap: 1.5rem; /* Reducir espacio entre elementos */
+            }
+
+            .logos-container img {
+                max-height: 70px; /* Reducir altura de los logos */
+            }
+        }
+
+        /* Estilo para Celulares */
+        @media (max-width: 768px) {
+            .logos-container {
+                grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+                grid-template-rows: repeat(4, auto); /* Cuatro filas */
+                gap: 1rem; /* Espaciado más ajustado */
+            }
+
+            .logos-container img {
+                max-height: 60px; /* Ajustar altura para pantallas pequeñas */
+            }
+        }
+    </style>
+</section>

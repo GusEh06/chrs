@@ -19,3 +19,40 @@ p {
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
 }
+
+/* Estilo minimalista para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 8px;
+    /* Ancho de la barra vertical */
+    height: 8px;
+    /* Altura de la barra horizontal */
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    /* Fondo del track de la barra */
+    border-radius: 10px;
+    /* Bordes redondeados del track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    /* Color de la barra */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    transition: background 0.3s ease;
+    /* Suaviza los cambios de color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+    /* Color al pasar el mouse */
+}
+
+/* Compatibilidad para Firefox */
+* {
+    scrollbar-width: thin;
+    /* Barra más delgada */
+    scrollbar-color: #555 #1a1a1a;
+    /* Color de la barra y el track */
+}

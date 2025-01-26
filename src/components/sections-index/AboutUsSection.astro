@@ -1,0 +1,99 @@
+<section class="about-us">
+    <div class="about-us-container">
+        <div class="about-us-image">
+            <img
+                src="/images/example-s3.jpg"
+                alt="Person working on video editing"
+            />
+        </div>
+        <div class="about-us-content">
+            <span class="about-us-title">About Us</span>
+            <h4 class="about-us-heading">We Always Make <br /> The Best</h4>
+            <p class="about-us-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas id odio placerat, convallis neque quis, interdum leo.
+                Nam hendrerit urna nibh, eget sagittis erat varius non. Duis id
+                varius augue. Donec tincidunt laoreet ligula, et maximus elit
+                tincidunt eu.
+            </p>
+            <button class="about-us-button">Contact Us</button>
+        </div>
+    </div>
+
+    <style>
+        .about-us {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .about-us-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            width: 90%;
+        }
+
+        .about-us-image img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .about-us-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-us-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .about-us-heading {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-us-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .about-us-button {
+            padding: 0.8rem 1.5rem;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        .about-us-button:hover {
+            background-color: #ddd;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .about-us-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-us-heading {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</section>

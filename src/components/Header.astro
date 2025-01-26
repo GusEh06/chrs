@@ -1,77 +1,133 @@
----
+<header class="site-header">
+    <div class="header-container">
+        <!-- Logo -->
+        <img class="img" src="/images/image.jpg" alt="Logo de Andrés Ramos" />
 
----
+        <!-- Botón de Menú Hamburguesa -->
+        <button
+            class="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+        >
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
 
-<header>
-    <img class="img" src="/images/image.jpg" alt="" />
-    <nav class="navbar">
-        <ul class="navbar-ul">
-            <li class="navbar-ul-li">
-                <a class="navbar-ul-a" href="">Inicio</a>
-            </li>
-            <li class="navbar-ul-li">
-                <a class="navbar-ul-a" href="">Sobre mi</a>
-            </li>
-            <li class="navbar-ul-li">
-                <a class="navbar-ul-a" href="">Proyectos</a>
-            </li>
-            <li class="navbar-ul-li">
-                <a class="navbar-ul-a navbar-ul-a-contact" href="">Contacto</a>
-            </li>
-        </ul>
-    </nav>
+        <!-- Menú de Navegación -->
+        <nav class="navbar">
+            <ul class="navbar-ul">
+                <li><a class="navbar-ul-a" href="#hero">Inicio</a></li>
+                <li><a class="navbar-ul-a" href="#about">Sobre mí</a></li>
+                <li><a class="navbar-ul-a" href="#projects">Proyectos</a></li>
+                <li>
+                    <a class="navbar-ul-a navbar-ul-a-contact" href="#contact"
+                        >Contacto</a
+                    >
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <style>
+        /* Header General */
+        .site-header {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+            color: white;
+            padding: 0.75rem 0; /* Espaciado interno */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .img {
+            width: 70px;
+            height: auto;
+        }
+
+        /* Navegación */
+        .navbar-ul {
+            display: flex;
+            gap: 1.5rem; /* Espaciado entre enlaces */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-ul-a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition:
+                background-color 0.3s ease,
+                color 0.3s ease;
+        }
+
+        .navbar-ul-a:hover {
+            background-color: rgba(
+                255,
+                255,
+                255,
+                0.2
+            ); /* Fondo claro al pasar el mouse */
+        }
+
+        /* Botón de Contacto */
+        .navbar-ul-a-contact {
+            border: 2px solid white;
+            border-radius: 15px;
+            font-weight: bold;
+            padding: 0.5rem 1.2rem; /* Tamaño más grande para destacarlo */
+            transition: all 0.3s ease;
+        }
+
+        .navbar-ul-a-contact:hover {
+            background-color: white;
+            color: black; /* Resalta el botón al pasar el mouse */
+        }
+
+        /* Menú Hamburguesa */
+        .hamburger {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .navbar {
+                display: none;
+            }
+
+            .navbar.active {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger");
+            const navbar = document.querySelector(".navbar");
+
+            if (hamburger && navbar) {
+                hamburger.addEventListener("click", () => {
+                    navbar.classList.toggle("active");
+                });
+            }
+        });
+    </script>
 </header>
-
-<style>
-    header {
-        height: 10vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .img {
-        margin-left: 25px;
-        width: 70px;
-        height: 40px;
-    }
-    .navbar {
-        width: 30%;
-        height: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 25px;
-    }
-    .navbar-ul {
-        display: flex;
-        align-items: center;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        padding: 0 10px;
-        justify-content: space-between;
-        gap: 25px;
-        list-style: none;
-    }
-    .navbar-ul-li {
-        height: 100%;
-        width: 25%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .navbar-ul-a {
-        color: aliceblue;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80%;
-        width: 95%;
-    }
-    .navbar-ul-a-contact {
-        border: 2px solid white;
-        border-radius: 15px;
-    }
-</style>
