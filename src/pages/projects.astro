@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/projects/Card";
+const pageTitle = "Projects";
+
+// Array de ejemplo para las tarjetas
+const projects = [
+    {
+        id: 1,
+        videoSrc: "/videos/video.mp4",
+        thumbnail: "/images/image1.jpg",
+        title: "Proyecto 1",
+        description: "Esta es la descripción del Proyecto 1.",
+    },
+    {
+        id: 2,
+        videoSrc: "/videos/video.mp4",
+        thumbnail: "/images/image2.jpg",
+        title: "Proyecto 2",
+        description: "Esta es la descripción del Proyecto 2.",
+    },
+    {
+        id: 3,
+        videoSrc: "/videos/video.mp4",
+        thumbnail: "/images/image3.jpg",
+        title: "Proyecto 3",
+        description: "Esta es la descripción del Proyecto 3.",
+    },
+    {
+        id: 4,
+        videoSrc: "/videos/video.mp4",
+        thumbnail: "/images/image4.jpg",
+        title: "Proyecto 4",
+        description: "Esta es la descripción del Proyecto 4.",
+    },
+];
+---
+
+<Layout title={pageTitle}>
+    <main>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {
+                projects.map((project) => (
+                    <Card
+                        key={project.id}
+                        videoSrc={project.videoSrc}
+                        thumbnail={project.thumbnail}
+                        title={project.title}
+                        description={project.description}
+                    />
+                ))
+            }
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 12em;
+    }
+</style>
