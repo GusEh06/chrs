@@ -1,63 +1,93 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HeroVideoSlider from "../components/projects/HeroVideoSlider.jsx";
 import Card from "../components/projects/Card";
-const pageTitle = "Projects";
 
-// Array de ejemplo para las tarjetas
-const projects = [
-    {
-        id: 1,
-        videoSrc: "/videos/video.mp4",
-        thumbnail: "/images/image1.jpg",
-        title: "Proyecto 1",
-        description: "Esta es la descripción del Proyecto 1.",
-    },
-    {
-        id: 2,
-        videoSrc: "/videos/video.mp4",
-        thumbnail: "/images/image2.jpg",
-        title: "Proyecto 2",
-        description: "Esta es la descripción del Proyecto 2.",
-    },
-    {
-        id: 3,
-        videoSrc: "/videos/video.mp4",
-        thumbnail: "/images/image3.jpg",
-        title: "Proyecto 3",
-        description: "Esta es la descripción del Proyecto 3.",
-    },
-    {
-        id: 4,
-        videoSrc: "/videos/video.mp4",
-        thumbnail: "/images/image4.jpg",
-        title: "Proyecto 4",
-        description: "Esta es la descripción del Proyecto 4.",
-    },
-];
+const pageTitle = "Proyectos";
+const cards = {
+    width: "w-64",
+    height: "h-64",
+};
 ---
 
 <Layout title={pageTitle}>
     <main>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {
-                projects.map((project) => (
-                    <Card
-                        key={project.id}
-                        videoSrc={project.videoSrc}
-                        thumbnail={project.thumbnail}
-                        title={project.title}
-                        description={project.description}
-                    />
-                ))
-            }
-        </div>
+        <!-- Sección de Hero Video Slider -->
+        <HeroVideoSlider client:load />
     </main>
+
+    <section class="space-1section">
+        <div class="space-1section-center">
+            <Card
+                image="/images/image (1).jpg"
+                title="Ejemplo de Card"
+                description="Esta es una descripción de la tarjeta en Astro."
+                moreInfo="texto ejemplar"
+                className={cards.height}
+            />
+            <Card
+                image="/images/image (1).jpg"
+                title="Ejemplo de Card"
+                description="Esta es una descripción de la tarjeta en Astro."
+                moreInfo="texto ejemplar"
+                className={cards.height}
+            />
+            <Card
+                image="/images/image (1).jpg"
+                title="Ejemplo de Card"
+                description="Esta es una descripción de la tarjeta en Astro."
+                moreInfo="texto ejemplar"
+                className={cards.height}
+            />
+            <Card
+                image="/images/image (1).jpg"
+                title="Ejemplo de Card"
+                description="Esta es una descripción de la tarjeta en Astro."
+                moreInfo="texto ejemplar"
+                className={cards.height}
+            />
+            <Card
+                image="/images/image (1).jpg"
+                title="Ejemplo de Card"
+                description="Esta es una descripción de la tarjeta en Astro."
+                moreInfo="texto ejemplar"
+                className={cards.height}
+            />
+            <Card
+                image="/images/image (1).jpg"
+                title="Ejemplo de Card"
+                description="Esta es una descripción de la tarjeta en Astro."
+                moreInfo="texto ejemplar"
+                className={cards.height}
+            />
+        </div>
+    </section>
 </Layout>
 
 <style>
     main {
         display: flex;
         flex-direction: column;
-        gap: 12em;
+    }
+    .space-1section {
+        height: auto;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .space-1section-center {
+        width: 80%;
+        height: auto;
+        /* background-color: blanchedalmond; */
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 30px 20px;
+        margin: 5em 0;
+    }
+    .space-1section-center-card {
+        width: 20px;
+        height: 20px;
     }
 </style>

@@ -74,9 +74,10 @@ export default function HeroVideoSlider() {
 
             {/* Miniaturas posicionadas en la parte inferior derecha */}
             <div
-                className="absolute z-10 flex gap-4 bg-black/70 backdrop-blur-lg rounded-lg shadow-xl w-max"
+                className="absolute z-10 flex gap-4 bg-transparent backdrop-blur-lg rounded-lg shadow-xl w-max"
                 style={{ bottom: "1.25rem", right: "1.25rem" }}
             >
+
 
                 {videos.map((video, index) => (
                     <button
