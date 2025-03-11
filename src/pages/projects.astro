@@ -1,13 +1,55 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroVideoSlider from "../components/projects/HeroVideoSlider.jsx";
-import Card from "../components/projects/Card";
+import VideoCard from "../components/projects/VideoCard";
 
 const pageTitle = "Proyectos";
-const cards = {
-    width: "w-64",
-    height: "h-64",
-};
+
+// Datos de ejemplo para las tarjetas
+const projectCards = [
+    {
+        image: "/images/image (1).jpg",
+        title: "Desarrollo Web con Astro",
+        description:
+            'Astro es un moderno generador de sitios web que ofrece un rendimiento excepcional. \n\nEste framework permite crear sitios web rápidos utilizando menos JavaScript, pero mantiene la flexibilidad para agregar interactividad donde sea necesario. \n\nAdemás, Astro utiliza una arquitectura única de "islas" que permite cargar JavaScript sólo donde sea necesario.',
+        video: "/videos/video.mp4",
+    },
+    {
+        image: "/images/image (2).jpg",
+        title: "Diseño UX Responsivo",
+        description:
+            "El diseño responsivo es esencial para la experiencia de usuario moderna. \n\nPermite que tu sitio web se adapte a múltiples dispositivos y tamaños de pantalla. \n\nCon las técnicas adecuadas, puedes crear interfaces que se vean geniales tanto en móviles como en escritorio.",
+        video: "/videos/video-example-2.mp4",
+    },
+    {
+        image: "/images/image (3).jpg",
+        title: "Optimización de Rendimiento",
+        description:
+            "La velocidad de carga es crítica para retener usuarios y mejorar el SEO. \n\nLas técnicas modernas de optimización incluyen carga diferida, compresión de imágenes y minimización de JavaScript. \n\nUn sitio rápido mejora significativamente las métricas de Core Web Vitals.",
+        video: "/videos/video-example-3.mp4",
+    },
+    {
+        image: "/images/image (4).jpg",
+        title: "Integración de APIs",
+        description:
+            "Las APIs permiten que tu sitio web se comunique con servicios externos y bases de datos. \n\nPuedes incorporar funcionalidades como mapas, pagos o redes sociales sin reinventar la rueda. \n\nAstro trabaja perfectamente con cualquier API REST o GraphQL.",
+        video: "/videos/video-example-4.mp4",
+    },
+    {
+        image: "/images/image (5).jpg",
+        title: "Animaciones Avanzadas",
+        description:
+            "Las animaciones bien implementadas mejoran la experiencia de usuario y hacen que tu sitio destaque. \n\nDesde transiciones sutiles hasta interacciones complejas, las animaciones web modernas son poderosas. \n\nAprende a balancear estética y rendimiento para crear animaciones eficientes.",
+        video: "/videos/video-example-5.mp4",
+    },
+    {
+        image: "/images/image (6).jpg",
+        title: "Accesibilidad Web",
+        description:
+            "La accesibilidad web asegura que todas las personas puedan usar tu sitio, independientemente de sus capacidades. \n\nImplementar estándares WCAG no solo es ético sino también beneficioso para SEO. \n\nDesarrollar con accesibilidad en mente amplía tu audiencia potencial significativamente.",
+        video: "/videos/video-example-6.mp4",
+    },
+];
 ---
 
 <Layout title={pageTitle}>
@@ -18,48 +60,18 @@ const cards = {
 
     <section class="space-1section">
         <div class="space-1section-center">
-            <Card
-                image="/images/image (1).jpg"
-                title="Ejemplo de Card"
-                description="Esta es una descripción de la tarjeta en Astro."
-                moreInfo="texto ejemplar"
-                className={cards.height}
-            />
-            <Card
-                image="/images/image (1).jpg"
-                title="Ejemplo de Card"
-                description="Esta es una descripción de la tarjeta en Astro."
-                moreInfo="texto ejemplar"
-                className={cards.height}
-            />
-            <Card
-                image="/images/image (1).jpg"
-                title="Ejemplo de Card"
-                description="Esta es una descripción de la tarjeta en Astro."
-                moreInfo="texto ejemplar"
-                className={cards.height}
-            />
-            <Card
-                image="/images/image (1).jpg"
-                title="Ejemplo de Card"
-                description="Esta es una descripción de la tarjeta en Astro."
-                moreInfo="texto ejemplar"
-                className={cards.height}
-            />
-            <Card
-                image="/images/image (1).jpg"
-                title="Ejemplo de Card"
-                description="Esta es una descripción de la tarjeta en Astro."
-                moreInfo="texto ejemplar"
-                className={cards.height}
-            />
-            <Card
-                image="/images/image (1).jpg"
-                title="Ejemplo de Card"
-                description="Esta es una descripción de la tarjeta en Astro."
-                moreInfo="texto ejemplar"
-                className={cards.height}
-            />
+            {
+                projectCards.map((card) => (
+                    <VideoCard
+                        client:load
+                        image={card.image}
+                        title={card.title}
+                        description={card.description}
+                        video={card.video}
+                        className="h-full"
+                    />
+                ))
+            }
         </div>
     </section>
 </Layout>
@@ -69,25 +81,35 @@ const cards = {
         display: flex;
         flex-direction: column;
     }
+
     .space-1section {
         height: auto;
         background-color: black;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 2em 0;
     }
+
     .space-1section-center {
         width: 80%;
-        height: auto;
-        /* background-color: blanchedalmond; */
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 30px 20px;
+        display: grid;
+        grid-template-columns: 1fr; /* Por defecto 1 columna */
+        gap: 30px;
         margin: 5em 0;
     }
-    .space-1section-center-card {
-        width: 20px;
-        height: 20px;
+
+    /* Tablet (2 columnas) */
+    @media (min-width: 640px) {
+        .space-1section-center {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Desktop (3 columnas) */
+    @media (min-width: 1024px) {
+        .space-1section-center {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 </style>
